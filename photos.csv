@@ -1,0 +1,161 @@
+Photo_id,Filename,Datetime,Country,City,Place Type,With Group,Subject Type,People Visible,Emotion,Value
+P0001,P0001.JPG,2023-06-21 18:38:51,Korea,Daegu,Shopping,Friend,People,Friend,Anticipation,5
+P0002,P0002.JPG,2023-06-22 11:11:08,Korea,Busan,Transit,Friend,People,Friend,Trust,4
+P0003,P0003.jpg,2023-06-22 15:55:50,Korea,Busan,Nature,Friend,People,Friend,Joy,5
+P0004,P0004.jpg,2023-06-22 19:01:18,Korea,Busan,Nature,Friend,Landscape,Unknown,Joy,3
+P0005,P0005.JPG,2023-06-23 0:00:27,Korea,Busan,Food,Friend,Food,Friend,Joy,5
+P0006,P0006.JPG,2023-06-23 12:58:24,Korea,Busan,Culture,Friend,People,Friend,Joy,2
+P0007,P0007.jpg,2023-06-23 20:14:22,Korea,Busan,Transit,Friend,People,Friend,Trust,5
+P0008,P0008.JPG,2023-06-24 15:32:37,Korea,Daegu,Culture,Friend,People,Friend,Anticipation,3
+P0009,P0009.JPG,2023-06-24 19:09:12,Korea,Daegu,Culture,Friend,Object,Friend,Surprise,2
+P0010,P0010.jpg,2023-06-27 19:13:49,Korea,Seoul,Culture,Friend,People,Friend,Trust,4
+P0011,P0011.JPG,2023-06-27 22:56:32,Korea,Seoul,Food,Friend,People,Friend,Anticipation,4
+P0012,P0012.JPG,2023-07-04 16:03:05,Korea,Daegu,Culture,Friend,People,Friend,Anticipation,3
+P0013,P0013.jpg,2023-07-04 18:33:48,Korea,Daegu,Culture,Friend,Object,Friend,Trust,5
+P0014,P0014.JPG,2023-07-05 20:00:22,Korea,Daegu,Culture,Friend,People,Friend,Joy,4
+P0015,P0015.JPG,2023-07-06 23:02:30,Korea,Daegu,Food,Friend,Object,Unknown,Surprise,2
+P0016,P0016.JPG,2023-07-09 22:35:25,Korea,Seoul,Food,Friend,Self,Alone,Sadness,-5
+P0017,P0017.JPG,2023-07-13 20:30:28,Korea,Daegu,Culture,Friend,People,Friend,Joy,3
+P0018,P0018.JPG,2023-07-14 23:31:56,Korea,Daegu,Home,Friend,Animal,None,Joy,1
+P0019,P0019.jpg,2023-07-20 21:18:44,Korea,Daegu,Street,Friend,Object,None,Anger,-2
+P0020,P0020.JPG,2023-07-22 18:10:35,Korea,Daegu,Culture,Friend,People,Friend,Joy,5
+P0021,P0021.JPG,2023-07-22 22:04:08,Korea,Daegu,Culture,Friend,Architecture,Crowd,Joy,5
+P0022,P0022.JPG,2023-07-25 17:42:27,Korea,Daegu,Transit,Alone,Architecture,None,Sadness,-4
+P0023,P0023.JPG,2023-07-26 21:23:28,Korea,Daegu,Culture,Friend,People,Friend,Trust,2
+P0024,P0024.JPG,2023-07-29 19:50:08,Korea,Daegu,Food,Friend,Food,None,Sadness,-1
+P0025,P0025.JPG,2023-07-31 13:15:59,Japan,Sapporo,Transit,Family,Text,None,Anticipation,3
+P0026,P0026.JPG,2023-07-31 15:03:25,Japan,Sapporo,Shopping,Family,Food,None,Anticipation,2
+P0027,P0027.JPG,2023-07-31 17:47:59,Japan,Sapporo,Street,Family,People,Family,Trust,3
+P0028,P0028.JPG,2023-07-31 18:09:42,Japan,Sapporo,Food,Family,Food,Family,Joy,4
+P0029,P0029.JPG,2023-07-31 18:20:14,Japan,Sapporo,Food,Family,People,Family,Joy,3
+P0030,P0030.JPG,2023-07-31 18:23:16,Japan,Sapporo,Street,Family,Architecture,Crowd,Joy,3
+P0031,P0031.JPG,2023-07-31 18:36:01,Japan,Sapporo,Food,Family,People,Friend,Trust,4
+P0032,P0032.JPG,2023-08-01 10:01:52,Japan,Sapporo,Nature,Family,Landscape,None,Surprise,2
+P0033,P0033.JPG,2023-08-01 10:05:36,Japan,Sapporo,Nature,Family,People,Family,Trust,4
+P0034,P0034.jpg,2023-08-01 11:29:28,Japan,Sapporo,Nature,Family,Self,Alone,Anticipation,2
+P0035,P0035.JPG,2023-08-01 12:01:13,Japan,Sapporo,Nature,Family,Landscape,None,Surprise,3
+P0036,P0036.jpg,2023-08-01 14:10:13,Japan,Sapporo,Nature,Family,Landscape,None,Joy,2
+P0037,P0037.JPG,2023-08-01 19:33:04,Japan,Sapporo,Street,Family,People,Family,Trust,3
+P0038,P0038.JPG,2023-08-02 1:13:53,Japan,Sapporo,Street,Family,People,Family,Anger,-1
+P0039,P0039.JPG,2023-08-02 2:45:38,Japan,Sapporo,Street,Family,Architecture,None,Anger,-1
+P0040,P0040.JPG,2023-08-02 3:43:06,Japan,Sapporo,Home,Family,People,Family,Joy,3
+P0041,P0041.JPG,2023-08-02 19:37:33,Japan,Sapporo,Food,Family,Food,None,Anticipation,4
+P0042,P0042.jpg,2023-08-03 13:51:33,Japan,Sapporo,Culture,Family,Self,Alone,Joy,2
+P0043,P0043.JPG,2023-08-03 16:47:32,Japan,Sapporo,Nature,Family,Landscape,None,Surprise,4
+P0044,P0044.JPG,2023-08-03 16:50:15,Japan,Sapporo,Nature,Family,People,Family,Fear,-1
+P0045,P0045.JPG,2023-08-08 15:51:49,Korea,Daegu,Food,Friend,Food,Friend,Joy,2
+P0046,P0046.JPG,2023-08-11 22:13:29,Korea,Daegu,Culture,Friend,Object,Friend,Trust,4
+P0047,P0047.jpg,2023-08-11 22:18:55,Korea,Daegu,Street,Friend,People,Friend,Trust,5
+P0048,P0048.JPG,2023-08-11 22:22:32,Korea,Daegu,Culture,Friend,People,Friend,Joy,1
+P0049,P0049.JPG,2023-08-13 20:28:31,Korea,Daegu,Food,Friend,Self,Alone,Fear,-2
+P0050,P0050.JPG,2023-08-14 20:46:29,Korea,Daegu,Culture,Friend,Object,None,Joy,4
+P0051,P0051.jpg,2023-08-16 19:35:03,Korea,Daegu,Culture,Friend,People,Friend,Joy,5
+P0052,P0052.JPG,2023-08-19 20:08:53,US,New York,Street,Friend,Architecture,None,Fear,2
+P0053,P0053.JPG,2023-08-19 20:46:46,US,New York,Street,Friend,Architecture,Crowd,Surprise,4
+P0054,P0054.JPG,2023-08-18 23:16:15,US,New York,Transit,Alone,Landscape,None,Disgust,-3
+P0055,P0055.jpg,2023-08-20 16:10:13,US,New York,Street,Friend,People,Friend,Anticipation,1
+P0056,P0056.JPG,2023-08-20 19:35:15,US,New York,Home,Friend,Object,None,Trust,2
+P0057,P0057.JPG,2023-08-22 15:08:12,US,New York,Street,Friend,Text,None,Surprise,3
+P0058,P0058.JPG,2023-08-22 15:15:36,US,New York,Shopping,Friend,Self,Alone,Joy,4
+P0059,P0059.JPG,2023-08-22 15:29:29,US,New York,Street,Friend,Object,Friend,Joy,4
+P0060,P0060.JPG,2023-08-22 16:18:06,US,New York,Food,Friend,People,Friend,Anticipation,2
+P0061,P0061.JPG,2023-08-23 10:44:34,US,New York,Home,Friend,People,Friend,Trust,1
+P0062,P0062.jpg,2023-08-23 12:03:24,US,New York,Home,Friend,Text,None,Trust,3
+P0063,P0063.JPG,2023-08-24 15:43:41,US,New York,School,Acquaintances,Text,Crowd,Fear,-2
+P0064,P0064.JPG,2023-08-25 19:40:44,US,New York,School,Friend,People,Friend,Joy,2
+P0065,P0065.JPG,2023-08-27 15:19:05,US,New York,Street,Friend,Self,Alone,Anticipation,1
+P0066,P0066.jpg,2023-08-27 19:17:45,US,New York,Street,Friend,Architecture,Crowd,Surprise,4
+P0067,P0067.JPG,2023-08-27 19:44:21,US,New York,Nature,Friend,Self,Alone,Sadness,-1
+P0068,P0068.JPG,2023-08-27 20:02:18,US,New York,Street,Friend,Architecture,None,Sadness,-3
+P0069,P0069.JPG,2023-08-28 1:16:31,US,New York,Home,Alone,Object,Alone,Trust,2
+P0070,P0070.JPG,2023-08-30 13:44:56,US,New York,,,,,,
+P0071,P0071.JPG,2023-08-31 15:34:11,US,New York,,,,,,
+P0072,P0072.JPG,2023-09-01 19:36:30,US,New York,Street,,,,,
+P0073,P0073.JPG,2023-09-01 20:52:58,US,New York,,,,,,
+P0074,P0074.JPG,2023-09-02 15:48:22,US,New York,,,,,,
+P0075,P0075.JPG,2023-09-02 15:52:34,US,New York,,,,,,
+P0076,P0076.jpeg,2023-09-02 16:09:16,US,New York,,,,,,
+P0077,P0077.JPG,2023-09-02 18:29:09,US,New York,,,,,,
+P0078,P0078.JPG,2023-09-03 20:34:49,US,New York,,,,,,
+P0079,P0079.JPG,2023-09-03 23:08:54,US,New York,,,,,,
+P0080,P0080.JPG,2023-09-04 21:47:54,US,New York,,,,,,
+P0081,P0081.JPG,2023-09-05 3:59:44,US,New York,,,,,,
+P0082,P0082.JPG,2023-09-05 19:29:36,US,New York,,,,,,
+P0083,P0083.JPG,2023-09-06 15:18:01,US,New York,,,,,,
+P0084,P0084.JPG,2023-09-09 17:07:13,US,New York,,,,,,
+P0085,P0085.JPG,2023-09-09 17:08:34,US,New York,,,,,,
+P0086,P0086.JPG,2023-09-09 18:59:25,US,New York,,,,,,
+P0087,P0087.JPG,2023-09-11 18:38:47,US,New York,,,,,,
+P0088,P0088.JPG,2023-09-12 19:10:17,US,New York,,,,,,
+P0089,P0089.jpg,2023-09-13 19:01:02,US,New York,,,,,,
+P0090,P0090.jpg,2023-09-14 16:14:49,US,New York,,,,,,
+P0091,P0091.jpeg,2023-09-14 17:45:05,US,New York,,,,,,
+P0092,P0092.JPG,2023-09-14 19:13:48,US,New York,,,,,,
+P0093,P0093.jpg,2023-09-16 20:45:10,US,New York,,,,,,
+P0094,P0094.JPG,2023-09-18 18:02:31,US,New York,,,,,,
+P0095,P0095.JPG,2023-09-18 18:36:49,US,New York,,,,,,
+P0096,P0096.JPG,2023-09-19 13:46:36,US,New York,,,,,,
+P0097,P0097.jpg,2023-09-20 19:40:49,US,New York,,,,,,
+P0098,P0098.jpg,2023-09-21 10:58:33,US,New York,,,,,,
+P0099,P0099.JPG,2023-09-21 11:34:51,US,New York,,,,,,
+P0100,P0100.JPG,2023-09-21 11:47:13,US,New York,,,,,,
+P0101,P0101.JPG,2023-09-25 15:21:29,US,New York,,,,,,
+P0102,P0102.JPG,2023-09-25 15:56:23,US,New York,,,,,,
+P0103,P0103.JPG,2023-09-26 9:13:17,US,New York,,,,,,
+P0104,P0104.JPG,2023-09-27 11:10:20,US,New York,,,,,,
+P0105,P0105.JPG,2023-09-29 5:05:27,US,New York,,,,,,
+P0106,P0106.JPG,2023-09-30 17:32:41,US,New York,,,,,,
+P0107,P0107.jpg,2023-10-03 4:52:55,US,New York,,,,,,
+P0108,P0108.JPG,2023-10-04 10:27:08,US,New York,,,,,,
+P0109,P0109.JPG,2023-10-04 14:26:23,US,New York,,,,,,
+P0110,P0110.JPG,2023-10-05 17:03:15,US,New York,,,,,,
+P0111,P0111.JPG,2023-10-05 17:04:30,US,New York,,,,,,
+P0112,P0112.jpeg,2023-10-05 17:37:26,US,New York,,,,,,
+P0113,P0113.jpg,2023-10-05 18:08:37,US,New York,,,,,,
+P0114,P0114.JPG,2023-10-05 18:46:52,US,New York,,,,,,
+P0115,P0115.JPG,2023-10-06 23:15:45,US,New York,,,,,,
+P0116,P0116.JPG,2023-10-07 23:16:26,US,New York,,,,,,
+P0117,P0117.JPG,2023-10-09 15:28:11,US,New York,,,,,,
+P0118,P0118.JPG,2023-10-10 2:02:55,US,New York,,,,,,
+P0119,P0119.JPG,2023-10-11 10:08:37,US,New York,,,,,,
+P0120,P0120.JPG,2023-10-11 10:29:31,US,New York,,,,,,
+P0121,P0121.JPG,2023-10-11 10:34:00,US,New York,,,,,,
+P0122,P0122.JPG,2023-10-11 10:40:47,US,New York,,,,,,
+P0123,P0123.JPG,2023-10-12 18:00:07,US,New York,,,,,,
+P0124,P0124.JPG,2023-10-14 1:17:18,US,New York,,,,,,
+P0125,P0125.JPG,2023-10-14 20:32:41,US,New York,,,,,,
+P0126,P0126.JPG,2023-10-14 20:38:22,US,New York,,,,,,
+P0127,P0127.JPG,2023-10-15 17:41:25,US,New York,,,,,,
+P0128,P0128.JPG,2023-10-15 18:40:37,US,New York,,,,,,
+P0129,P0129.jpg,2023-10-15 18:41:26,US,New York,,,,,,
+P0130,P0130.JPG,2023-10-16 14:23:20,US,New York,,,,,,
+P0131,P0131.JPG,2023-10-16 14:28:22,US,New York,,,,,,
+P0132,P0132.JPG,2023-10-16 21:40:54,US,New York,,,,,,
+P0133,P0133.JPG,2023-10-17 6:58:10,US,New York,,,,,,
+P0134,P0134.JPG,2023-10-17 12:07:17,US,New York,,,,,,
+P0135,P0135.JPG,2023-10-17 20:02:17,US,New York,,,,,,
+P0136,P0136.JPG,2023-10-18 19:00:00,US,New York,,,,,,
+P0137,P0137.JPG,2023-10-18 20:17:18,US,New York,,,,,,
+P0138,P0138.JPG,2023-10-20 16:22:46,US,New York,,,,,,
+P0139,P0139.JPG,2023-10-21 16:07:40,US,New York,,,,,,
+P0140,P0140.JPG,2023-10-21 20:14:52,US,New York,,,,,,
+P0141,P0141.JPG,2023-10-21 22:15:18,US,New York,,,,,,
+P0142,P0142.JPG,2023-10-22 15:42:44,US,New York,,,,,,
+P0143,P0143.JPG,2023-10-22 15:47:00,US,New York,,,,,,
+P0144,P0144.JPG,2023-10-22 23:02:58,US,New York,,,,,,
+P0145,P0145.JPG,2023-10-24 6:11:45,US,New York,,,,,,
+P0146,P0146.JPG,2023-10-24 15:04:21,US,New York,,,,,,
+P0147,P0147.JPG,2023-10-25 13:32:40,US,New York,,,,,,
+P0148,P0148.JPG,2023-10-25 23:10:53,US,New York,,,,,,
+P0149,P0149.JPG,2023-10-26 9:31:10,US,New York,,,,,,
+P0150,P0150.JPG,2023-10-26 11:32:07,US,New York,,,,,,
+P0151,P0151.JPG,2023-10-27 7:46:54,US,New York,,,,,,
+P0152,P0152.JPG,2023-10-27 8:13:44,US,New York,,,,,,
+P0153,P0153.JPG,2023-10-27 22:26:47,US,New York,,,,,,
+P0154,P0154.JPG,2023-10-28 1:58:57,US,New York,,,,,,
+P0155,P0155.JPG,2023-10-28 13:19:28,US,New York,,,,,,
+P0156,P0156.jpeg,2023-10-28 23:08:15,US,New York,,,,,,
+P0157,P0157.JPG,2023-10-28 23:34:15,US,New York,,,,,,
+P0158,P0158.JPG,2023-10-29 3:09:27,US,New York,,,,,,
+P0159,P0159.JPG,2023-10-31 21:32:14,US,New York,,,,,,
+P0160,P0160.JPG,2023-10-31 21:47:23,US,New York,,,,,,

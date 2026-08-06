@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MOVE — a personal photographic archive of emotional and physical movement.">
+  <title>MOVE — Emotional Movement</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
+  <script src="photos-data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="landing" id="top">
+    <p class="eyebrow">Personal photographic archive · 2023–2026</p>
+    <div class="landing-grid">
+      <h1>MOVE</h1>
+      <div class="landing-copy">
+        <p>MOVE began with the discovery that my strongest emotional shifts often occurred during moments of movement, while stability brought calm.</p>
+        <p class="small-copy">Using photographs as records of place, relationships, subjects, and emotion, this project visualizes how movement shaped my experience over time.</p>
+      </div>
+    </div>
+    <a class="scroll-link" href="#emotions">Explore the archive ↓</a>
+  </header>
+
+  <main>
+    <section class="emotion-section" id="emotions">
+      <div class="section-intro">
+        <p class="section-number">01</p>
+        <div>
+          <p class="eyebrow">Emotional composition</p>
+          <h2>Eight emotions, rearranged by filter.</h2>
+          <p>Each circle represents one of Plutchik’s eight emotions. Circle size changes according to the number of photographs that match the selected filters.</p>
+        </div>
+      </div>
+
+      <div class="emotion-layout">
+        <div class="emotion-stage">
+          <svg id="emotion-bubbles" role="img" aria-label="Eight emotion circles sized by filtered photograph count"></svg>
+          <p id="bubble-empty" class="empty-state" hidden>No annotated photographs match these filters.</p>
+        </div>
+
+        <aside class="filter-panel">
+          <div class="filter-header">
+            <p class="eyebrow">Filter the archive</p>
+            <button id="reset-filters" type="button">Reset all</button>
+          </div>
+
+          <label class="filter-field">
+            <span>Country</span>
+            <select id="country-filter"><option value="all">All countries</option></select>
+          </label>
+          <label class="filter-field">
+            <span>City</span>
+            <select id="city-filter"><option value="all">All cities</option></select>
+          </label>
+          <label class="filter-field">
+            <span>Place type</span>
+            <select id="place-filter"><option value="all">All place types</option></select>
+          </label>
+          <label class="filter-field">
+            <span>With group</span>
+            <select id="group-filter"><option value="all">All groups</option></select>
+          </label>
+          <label class="filter-field">
+            <span>Subject type</span>
+            <select id="subject-filter"><option value="all">All subjects</option></select>
+          </label>
+          <label class="filter-field">
+            <span>People visible</span>
+            <select id="people-filter"><option value="all">All visibility types</option></select>
+          </label>
+
+          <div class="filter-reading">
+            <p class="eyebrow">Current reading</p>
+            <p id="filter-summary">Showing all annotated photographs.</p>
+            <p id="selected-emotion-note">Click an emotion circle to isolate it.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-intro compact">
+        <p class="section-number">02</p>
+        <div>
+          <p class="eyebrow">Selected photographs</p>
+          <h2 id="gallery-title">Choose an emotion</h2>
+          <p id="gallery-description">Click one of the eight circles above to open the matching photo collection.</p>
+        </div>
+      </div>
+      <div id="gallery-grid" class="gallery-grid">
+        <p class="gallery-placeholder">The gallery will appear here after an emotion is selected.</p>
+      </div>
+    </section>
+
+    <section class="timeline-section" id="timeline">
+      <div class="section-intro compact">
+        <p class="section-number">03</p>
+        <div>
+          <p class="eyebrow">Emotional movement</p>
+          <h2>Filtered emotion through time.</h2>
+          <p>Each point is one photograph. Time moves from left to right, while vertical position shows its emotion score from −5 to +5.</p>
+        </div>
+      </div>
+
+      <div class="timeline-key">
+        <span>Negative emotion</span>
+        <div class="emotion-gradient" aria-hidden="true"></div>
+        <span>Positive emotion</span>
+      </div>
+      <div class="timeline-shell">
+        <svg id="timeline-chart" role="img" aria-label="Filtered emotional movement timeline"></svg>
+        <p id="timeline-empty" class="empty-state" hidden>No timeline data matches the selected filters.</p>
+      </div>
+    </section>
+
+    <section class="detail-section" id="detail">
+      <div class="section-intro compact">
+        <p class="section-number">04</p>
+        <div>
+          <p class="eyebrow">Photograph detail</p>
+          <h2 id="detail-heading">Select a point on the timeline.</h2>
+        </div>
+      </div>
+
+      <div class="detail-layout is-empty" id="detail-layout">
+        <div class="detail-image-wrap">
+          <img id="detail-image" src="" alt="" hidden>
+          <p id="detail-placeholder">Click a timeline point to view the photograph and its complete annotation.</p>
+        </div>
+        <dl class="detail-data">
+          <div><dt>Photo ID</dt><dd id="detail-id">—</dd></div>
+          <div><dt>Date & time</dt><dd id="detail-date">—</dd></div>
+          <div><dt>Location</dt><dd id="detail-location">—</dd></div>
+          <div><dt>Place type</dt><dd id="detail-place">—</dd></div>
+          <div><dt>With group</dt><dd id="detail-group">—</dd></div>
+          <div><dt>Subject</dt><dd id="detail-subject">—</dd></div>
+          <div><dt>People visible</dt><dd id="detail-people">—</dd></div>
+          <div><dt>Emotion</dt><dd id="detail-emotion">—</dd></div>
+          <div><dt>Emotion score</dt><dd id="detail-score">—</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="method-section">
+      <p class="eyebrow">Method</p>
+      <p class="method-flow">PHOTO → METADATA → CLASSIFICATION → FILTER → EMOTIONAL PATTERN</p>
+      <p>One CSV row represents one photograph. Emotional values are subjective personal annotations rather than objective psychological measurements.</p>
+    </section>
+  </main>
+
+  <div id="tooltip" class="tooltip" hidden></div>
+</body>
+</html>
