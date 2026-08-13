@@ -1,152 +1,248 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MOVE — a personal photographic archive of emotional and physical movement.">
-  <title>MOVE — Emotional Movement</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MOVE — a visual archive of movement and emotion." />
+  <title>MOVE — Visual Archive of Movement and Emotion</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
   <script src="photos-data.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
   <header class="landing" id="top">
-    <p class="eyebrow">Personal photographic archive · 2023–2026</p>
-    <div class="landing-grid">
+    <div class="landing-title-wrap">
+      <p class="eyebrow">Personal photo archive · 2023–2026</p>
       <h1>MOVE</h1>
-      <div class="landing-copy">
-        <p>MOVE began with the discovery that my strongest emotional shifts often occurred during moments of movement, while stability brought calm.</p>
-        <p class="small-copy">Using photographs as records of place, relationships, subjects, and emotion, this project visualizes how movement shaped my experience over time.</p>
-      </div>
+      <p class="landing-subtitle">Visual Archive of Movement and Emotion</p>
     </div>
-    <a class="scroll-link" href="#emotions">Explore the archive ↓</a>
+
+    <div class="landing-copy">
+      <p>
+        An archive of photographs transformed into data, tracing how movement
+        across places, time, relationships, and everyday experiences shapes
+        emotional change.
+      </p>
+      <p class="data-status" id="data-status" aria-live="polite">Loading photographs…</p>
+    </div>
+
+    <a class="scroll-cue" href="#emotion-filters">Explore ↓</a>
   </header>
 
   <main>
-    <section class="emotion-section" id="emotions">
+    <section class="section emotion-filter-section" id="emotion-filters">
       <div class="section-intro">
-        <p class="section-number">01</p>
         <div>
-          <p class="eyebrow">Emotional composition</p>
-          <h2>Eight emotions, rearranged by filter.</h2>
-          <p>Each circle represents one of Plutchik’s eight emotions. Circle size changes according to the number of photographs that match the selected filters.</p>
+          <p class="section-number">01</p>
+          <h2>Emotion by Filters</h2>
         </div>
+        <p class="section-description">
+          Each model changes according to the number of photographs that match
+          the selected filters. Circle area and bar length encode the same count.
+        </p>
       </div>
 
-      <div class="emotion-layout">
-        <div class="emotion-stage">
-          <svg id="emotion-bubbles" role="img" aria-label="Eight emotion circles sized by filtered photograph count"></svg>
-          <p id="bubble-empty" class="empty-state" hidden>No annotated photographs match these filters.</p>
-        </div>
-
-        <aside class="filter-panel">
-          <div class="filter-header">
-            <p class="eyebrow">Filter the archive</p>
-            <button id="reset-filters" type="button">Reset all</button>
+      <div class="emotion-filter-layout">
+        <div class="emotion-models">
+          <div class="bubble-panel">
+            <svg id="emotion-bubbles" role="img" aria-label="Eight emotion circles sized by filtered photograph count"></svg>
           </div>
 
-          <label class="filter-field">
+          <div class="bar-panel">
+            <svg id="emotion-bars" role="img" aria-label="Horizontal emotion count bars for the current filters"></svg>
+          </div>
+        </div>
+
+        <aside class="filter-panel" aria-label="Archive filters">
+          <div class="filter-panel-heading">
+            <p class="eyebrow">Filter archive</p>
+            <button id="reset-filters" class="text-button" type="button">Reset all</button>
+          </div>
+
+          <label class="filter">
             <span>Country</span>
             <select id="country-filter"><option value="all">All countries</option></select>
           </label>
-          <label class="filter-field">
+
+          <label class="filter">
             <span>City</span>
             <select id="city-filter"><option value="all">All cities</option></select>
           </label>
-          <label class="filter-field">
+
+          <label class="filter">
             <span>Place type</span>
             <select id="place-filter"><option value="all">All place types</option></select>
           </label>
-          <label class="filter-field">
+
+          <label class="filter">
             <span>With group</span>
             <select id="group-filter"><option value="all">All groups</option></select>
           </label>
-          <label class="filter-field">
+
+          <label class="filter">
             <span>Subject type</span>
             <select id="subject-filter"><option value="all">All subjects</option></select>
           </label>
-          <label class="filter-field">
+
+          <label class="filter">
             <span>People visible</span>
-            <select id="people-filter"><option value="all">All visibility types</option></select>
+            <select id="people-filter"><option value="all">All people</option></select>
           </label>
 
-          <div class="filter-reading">
-            <p class="eyebrow">Current reading</p>
-            <p id="filter-summary">Showing all annotated photographs.</p>
-            <p id="selected-emotion-note">Click an emotion circle to isolate it.</p>
+          <div class="filter-summary">
+            <span id="filtered-count">0</span>
+            <small>photographs in current filter</small>
           </div>
+        </aside>
+      </div>
+
+      <div class="selected-emotion-strip" id="selected-emotion-strip" hidden>
+        <div>
+          <p class="eyebrow">Selected emotion</p>
+          <p class="selected-emotion-name" id="selected-emotion-name">Joy</p>
+        </div>
+        <button id="clear-emotion" class="text-button" type="button">Show all emotions</button>
+      </div>
+
+      <div class="gallery-section" id="gallery-section" hidden>
+        <div class="subsection-heading">
+          <h3>Photographs</h3>
+          <p id="gallery-caption" class="section-description"></p>
+        </div>
+        <div id="photo-gallery" class="photo-gallery"></div>
+      </div>
+    </section>
+
+    <section class="section compare-section" id="compare-emotion">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">02</p>
+          <h2>Comparing Emotion</h2>
+        </div>
+        <p class="section-description">
+          Add multiple filters to compare how the emotional composition changes.
+          Every layer uses percentages, so groups of different sizes remain comparable.
+        </p>
+      </div>
+
+      <div class="compare-controls">
+        <label class="filter compare-field">
+          <span>Compare by</span>
+          <select id="compare-dimension">
+            <option value="country">Country</option>
+            <option value="city">City</option>
+            <option value="place_type">Place type</option>
+            <option value="with_group">With group</option>
+            <option value="subject_type">Subject type</option>
+            <option value="people_visible">People visible</option>
+          </select>
+        </label>
+
+        <label class="filter compare-field">
+          <span>Value</span>
+          <select id="compare-value"></select>
+        </label>
+
+        <button id="add-comparison" class="outline-button" type="button">+ Add filter</button>
+      </div>
+
+      <div class="comparison-layout">
+        <div class="radar-shell">
+          <svg id="comparison-radar" role="img" aria-label="Radar chart comparing emotional distributions across filters"></svg>
+        </div>
+        <aside class="comparison-legend" id="comparison-legend">
+          <p class="empty-copy">Add a filter to begin comparing emotions.</p>
         </aside>
       </div>
     </section>
 
-    <section class="gallery-section" id="gallery">
-      <div class="section-intro compact">
-        <p class="section-number">02</p>
+    <section class="section timeline-section" id="emotional-timeline">
+      <div class="section-intro">
         <div>
-          <p class="eyebrow">Selected photographs</p>
-          <h2 id="gallery-title">Choose an emotion</h2>
-          <p id="gallery-description">Click one of the eight circles above to open the matching photo collection.</p>
+          <p class="section-number">03</p>
+          <h2>Emotional Movement</h2>
         </div>
-      </div>
-      <div id="gallery-grid" class="gallery-grid">
-        <p class="gallery-placeholder">The gallery will appear here after an emotion is selected.</p>
-      </div>
-    </section>
-
-    <section class="timeline-section" id="timeline">
-      <div class="section-intro compact">
-        <p class="section-number">03</p>
-        <div>
-          <p class="eyebrow">Emotional movement</p>
-          <h2>Filtered emotion through time.</h2>
-          <p>Each point is one photograph. Time moves from left to right, while vertical position shows its emotion score from −5 to +5.</p>
-        </div>
+        <p class="section-description">
+          Each point is one photograph. Time moves from left to right, while
+          vertical position shows its emotion score from −5 to +5. The current
+          filters are applied to the timeline.
+        </p>
       </div>
 
-      <div class="timeline-key">
+      <div class="timeline-meta">
+        <p><span id="timeline-count">0</span> visible photographs</p>
+        <p id="timeline-filter-label">All filters</p>
+      </div>
+
+      <div class="timeline-shell">
+        <svg id="timeline-chart" role="img" aria-label="Filtered emotional timeline"></svg>
+        <div id="timeline-empty" class="empty-state" hidden>No photographs match the current filters.</div>
+      </div>
+      <div class="axis-note">
         <span>Negative emotion</span>
-        <div class="emotion-gradient" aria-hidden="true"></div>
+        <span>Capture time →</span>
         <span>Positive emotion</span>
       </div>
-      <div class="timeline-shell">
-        <svg id="timeline-chart" role="img" aria-label="Filtered emotional movement timeline"></svg>
-        <p id="timeline-empty" class="empty-state" hidden>No timeline data matches the selected filters.</p>
-      </div>
-    </section>
 
-    <section class="detail-section" id="detail">
-      <div class="section-intro compact">
-        <p class="section-number">04</p>
-        <div>
-          <p class="eyebrow">Photograph detail</p>
-          <h2 id="detail-heading">Select a point on the timeline.</h2>
-        </div>
-      </div>
-
-      <div class="detail-layout is-empty" id="detail-layout">
+      <div class="photo-detail" id="photo-detail">
         <div class="detail-image-wrap">
-          <img id="detail-image" src="" alt="" hidden>
-          <p id="detail-placeholder">Click a timeline point to view the photograph and its complete annotation.</p>
+          <img id="detail-image" src="" alt="" hidden />
+          <p id="detail-placeholder">Click a point on the timeline to open the photograph and its data.</p>
         </div>
-        <dl class="detail-data">
-          <div><dt>Photo ID</dt><dd id="detail-id">—</dd></div>
-          <div><dt>Date & time</dt><dd id="detail-date">—</dd></div>
-          <div><dt>Location</dt><dd id="detail-location">—</dd></div>
-          <div><dt>Place type</dt><dd id="detail-place">—</dd></div>
-          <div><dt>With group</dt><dd id="detail-group">—</dd></div>
-          <div><dt>Subject</dt><dd id="detail-subject">—</dd></div>
-          <div><dt>People visible</dt><dd id="detail-people">—</dd></div>
-          <div><dt>Emotion</dt><dd id="detail-emotion">—</dd></div>
-          <div><dt>Emotion score</dt><dd id="detail-score">—</dd></div>
-        </dl>
+
+        <div class="detail-info">
+          <p class="eyebrow">Selected photograph</p>
+          <p class="detail-id" id="detail-photo-id">—</p>
+          <dl>
+            <div><dt>Date & time</dt><dd id="detail-date">—</dd></div>
+            <div><dt>Location</dt><dd id="detail-location">—</dd></div>
+            <div><dt>Place type</dt><dd id="detail-place">—</dd></div>
+            <div><dt>With group</dt><dd id="detail-group">—</dd></div>
+            <div><dt>Subject type</dt><dd id="detail-subject">—</dd></div>
+            <div><dt>People visible</dt><dd id="detail-people">—</dd></div>
+            <div><dt>Emotion</dt><dd id="detail-emotion">—</dd></div>
+            <div><dt>Emotion score</dt><dd id="detail-score">—</dd></div>
+          </dl>
+        </div>
       </div>
     </section>
 
-    <section class="method-section">
-      <p class="eyebrow">Method</p>
-      <p class="method-flow">PHOTO → METADATA → CLASSIFICATION → FILTER → EMOTIONAL PATTERN</p>
-      <p>One CSV row represents one photograph. Emotional values are subjective personal annotations rather than objective psychological measurements.</p>
+    <section class="section physical-section" id="physical-movement">
+      <div class="section-intro">
+        <div>
+          <p class="section-number">04</p>
+          <h2>Physical Movement Map</h2>
+        </div>
+        <p class="section-description">
+          Mapping my physical movement across countries and cities through a
+          horizontally scrollable hierarchy. Hover over a location to reveal its
+          photograph count and emotional composition.
+        </p>
+      </div>
+
+      <div class="physical-key">
+        <span><i class="key-country"></i> Country</span>
+        <span><i class="key-city"></i> City</span>
+        <span>Hover → emotion pie</span>
+        <span>Circle size → photograph count</span>
+      </div>
+
+      <div class="physical-scroll" id="physical-scroll">
+        <svg id="physical-map" role="img" aria-label="Horizontally scrollable hierarchy of countries and cities"></svg>
+      </div>
+      <p class="scroll-hint">← scroll horizontally →</p>
+    </section>
+
+    <section class="about-section">
+      <p class="eyebrow">About the data</p>
+      <p>
+        Emotion values are personal annotations rather than objective psychological measurements.
+        MOVE uses the archive to reveal patterns between where I was, what I photographed,
+        who I was with, and how I remember feeling.
+      </p>
     </section>
   </main>
 
